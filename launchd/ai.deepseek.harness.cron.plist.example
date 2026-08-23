@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>ai.deepseek.harness.cron</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <!-- Replace this with the absolute path printed by: command -v dsh -->
+    <string>/ABSOLUTE/PATH/TO/dsh</string>
+    <string>web</string>
+    <string>--no-open</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <!-- Restricts the default workspace boundary used by the Web profile. -->
+  <string>/ABSOLUTE/PATH/TO/WORKSPACE</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>DSH_HOME</key>
+    <string>/ABSOLUTE/PATH/TO/.dsh</string>
+    <key>DSH_TELEMETRY_DISABLED</key>
+    <string>1</string>
+    <!-- Include the directory containing the Node executable used by dsh. -->
+    <key>PATH</key>
+    <string>/ABSOLUTE/PATH/TO/NODE-DIR:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>/ABSOLUTE/PATH/TO/LOGS/dsh-cron.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/ABSOLUTE/PATH/TO/LOGS/dsh-cron.stderr.log</string>
+
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+</dict>
+</plist>

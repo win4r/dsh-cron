@@ -1,0 +1,21 @@
+- insert:
+    - id: cron
+      name: '@charlesqin/dsh-cron'
+      config:
+        defaultTimeZone: America/Los_Angeles
+        defaultAgentPreset: standard
+        defaultPermissionPreset: workspace-write
+        defaultMisfirePolicy: latest
+        maxConcurrentRuns: 1
+        maxRuntimeMs: 3600000
+        heartbeatIntervalMs: 30000
+        allowedTools:
+          - !!js "process.platform === 'win32' ? 'pwsh' : 'bash'"
+          - read
+          - read_image
+          - write
+          - edit
+          - grep
+          - glob
+          - web_search
+          - skill

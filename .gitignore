@@ -1,0 +1,14 @@
+node_modules/
+dist/
+graphify-out/
+coverage/
+*.tgz
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+.dsh/
+.env
+.env.*
+!.env.example
+.DS_Store
